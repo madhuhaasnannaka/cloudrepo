@@ -12,7 +12,7 @@ steps:
   - run
   - --image=gcr.io/$PROJECT_ID/petclinic:latest
   - --location=us-central1-a
-  - --cluster=ad-gke
+  - --cluster=gt-gke
   - --app=spring-petclinic
   - --expose=8080
   - --namespace=default
