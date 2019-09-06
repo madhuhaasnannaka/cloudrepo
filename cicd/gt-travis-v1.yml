@@ -1,0 +1,20 @@
+sudo: required
+language: java
+jdk: oraclejdk8
+
+services:
+  - docker
+
+script:
+  - mvn clean package -DskipTests
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+
+after_success:
+  - export IMAGE_NAME=gtct/sb-petclinic-jar
+  - export TAG=$TRAVIS_BUILD_NUMBER
+  - docker build -t $IMAGE_NAME:$TAG .
+  - docker login -u $DH_USER -p $DH_PASS
+  - docker push $IMAGE_NAME:$TAG
