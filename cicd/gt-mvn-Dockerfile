@@ -1,0 +1,11 @@
+FROM maven:3.5-jdk-8
+LABEL author="GT"
+
+RUN mkdir -p /app
+COPY ./src /app/
+ADD pom.xml /app/pom.xml 
+VOLUME ["~/.m2:/root/.m2"]
+EXPOSE 8080
+WORKDIR /app
+
+ENTRYPOINT ["mvn","spring-boot:run"]
