@@ -10,11 +10,8 @@ steps:
 #- name: 'gcr.io/cloud-builders/mvn'
  # args: ["sonar:sonar", "-Dsonar.host.url=https://sonarcloud.io", "dir=.","-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34"]
   
-- name: gcr.io/cloud-builders/git
-  args: ['fetch', '--unshallow']
 
-- name: gcr.io/cloud-builders/git
-  args: ['fetch', 'origin', 'master']
+
 
 - name: maven:3.6.0-jdk-8-slim
   entrypoint: mvn
