@@ -18,6 +18,7 @@ steps:
   args: 
     - '--batch-mode'
     - 'sonar:sonar'
+    - '-Dsonar.organization=Madhuhaas Nannaka'
     - '-Dsonar.host.url=https://sonarcloud.io'
     - '-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34'
 - name: 'gcr.io/cloud-builders/gke-deploy:stable'
