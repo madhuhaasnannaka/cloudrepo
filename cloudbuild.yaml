@@ -19,7 +19,7 @@ steps:
     - '--batch-mode'
     - 'sonar:sonar'
     - '-Dsonar.branch.name=$BRANCH_NAME'
-    - '-Dsonar.branch.target=master'
+    - '-Dsonar.branch.target=gh-pages'
     - '-Dsonar.host.url=https://sonarcloud.io'
     - '-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34'
 - name: 'gcr.io/cloud-builders/gke-deploy:stable'
