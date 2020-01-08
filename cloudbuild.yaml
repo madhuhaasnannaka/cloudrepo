@@ -19,16 +19,16 @@ steps:
     - '--batch-mode'
     - 'sonar:sonar'
     - '-Dsonar.projectName=Simple Java project analyzed with the SonarQube Runner'
-    - '-sonar.projectVersion=1.0'
+    - '-Dsonar.projectVersion=1.0'
 
 # Comma-separated paths to directories with sources (required)
-    - '-sonar.sources=src'
+    - '-Dsonar.sources=src'
 
 # Language
-    - '-sonar.language=java'
+    - '-Dsonar.language=java'
 
 # Encoding of the source files
-    - '-sonar.sourceEncoding=UTF-8'
+    - '-Dsonar.sourceEncoding=UTF-8'
     - '-Dsonar.organization=madhuhaasnannaka'
     - '-Dsonar.projectKey=org.springframework.samples:spring-petclinic'
     - '-Dsonar.host.url=https://sonarcloud.io'
