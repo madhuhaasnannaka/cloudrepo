@@ -12,6 +12,7 @@ steps:
    - '-Dsonar.login=3514b0f61dfc5d1a0ec2e0b76ba900f589fac079'
    - '-Dsonar.sources=.'
 
+
 - name: 'gcr.io/cloud-builders/docker'
   args: ["build", "-t", "gcr.io/$PROJECT_ID/petclinic:$COMMIT_SHA", "-t", "gcr.io/$PROJECT_ID/petclinic:latest", "."]
 - name: 'gcr.io/cloud-builders/docker'
