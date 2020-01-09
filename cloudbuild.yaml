@@ -5,6 +5,7 @@ steps:
   entrypoint: mvn
   args: 
    - '--batch-mode'
+   - 'install'
    - 'sonar:sonar'
    - '-Dsonar.projectName=Simple Java project analyzed with the SonarQube Runner'
    - '-Dsonar.projectVersion=1.0'
