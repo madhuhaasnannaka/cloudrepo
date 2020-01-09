@@ -7,37 +7,25 @@ steps:
   args: ["push", "gcr.io/$PROJECT_ID/petclinic:$COMMIT_SHA"]
 - name: 'gcr.io/cloud-builders/docker'
   args: ["push", "gcr.io/$PROJECT_ID/petclinic:latest"]
-#- name: 'gcr.io/cloud-builders/mvn'
- # args: ["sonar:sonar", "-Dsonar.host.url=https://sonarcloud.io", "dir=.","-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34"]
-- name: 'gcr.io/$PROJECT_ID/sonar-scanner:3.3.0.1492'
-  args:
-    - '-Dsonar.host.url=https://sonarcloud.io'
-    - '-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34'
-    - '-Dsonar.projectKey=org.springframework.samples:spring-petclinic'
-    - '-Dsonar.organization=madhuhaasnannaka'
-    - '-Dsonar.sources=.'
-#- name: maven:3.6.0-jdk-8-slim
-#  entrypoint: mvn
-#  args: 
-#    - '--batch-mode'
-#   - 'sonar:sonar'
-#    - '-Dsonar.projectName=Simple Java project analyzed with the SonarQube Runner'
-#    - '-Dsonar.projectVersion=1.0'
-
+- name: maven:3.6.0-jdk-8-slim
+  entrypoint: mvn
+  args: 
+   - '--batch-mode'
+   - 'sonar:sonar'
+   - '-Dsonar.projectName=Simple Java project analyzed with the SonarQube Runner'
+   - '-Dsonar.projectVersion=1.0'
 # Comma-separated paths to directories with sources (required)
-  #  - '-Dsonar.sources=src'
-
+   - '-Dsonar.sources=src'
 # Language
- #   - '-Dsonar.language=java'
-
+   - '-Dsonar.language=java'
 # Encoding of the source files
-#    - '-Dsonar.sourceEncoding=UTF-8'
- #   - '-Dsonar.organization=madhuhaasnannaka'
- #   - '-Dsonar.projectKey=org.springframework.samples:spring-petclinic'
-  #  - '-Dsonar.host.url=https://sonarcloud.io'
- #   - '-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34'
- #   - '-Dsonar.sources=.'
- #   - 'Dsonar.exclusions=src/test/java/**'
+   - '-Dsonar.sourceEncoding=UTF-8'
+   - '-Dsonar.organization=madhuhaasnannaka'
+   - '-Dsonar.projectKey=org.springframework.samples:spring-petclinic'
+   - '-Dsonar.host.url=https://sonarcloud.io'
+   - '-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34'
+   - '-Dsonar.sources=.'
+   - 'Dsonar.exclusions=src/test/java/**'
 - name: 'gcr.io/cloud-builders/gke-deploy:stable'
   args:
   - run
