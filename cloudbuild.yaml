@@ -25,7 +25,8 @@ steps:
    - '-Dsonar.host.url=https://sonarcloud.io'
    - '-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34'
    - '-Dsonar.sources=.'
-   - 'Dsonar.exclusions=src/test/java/**'
+#   - 'Dsonar.exclusions=src/test/java/**'
+   - '-Dsonar.test.exclusions=src/main/java/**'
 - name: 'gcr.io/cloud-builders/gke-deploy:stable'
   args:
   - run
