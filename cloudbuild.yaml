@@ -16,7 +16,6 @@ steps:
     - '-Dsonar.projectKey=org.springframework.samples:spring-petclinic'
     - '-Dsonar.organization=madhuhaasnannaka'
     - '-Dsonar.sources=.'
-tags: ['cloud-builders-community'] 
 
 
 
