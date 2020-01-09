@@ -11,6 +11,9 @@ steps:
    - '-Dsonar.host.url=https://sonarcloud.io'
    - '-Dsonar.login=3514b0f61dfc5d1a0ec2e0b76ba900f589fac079'
    - '-Dsonar.sources=.'
+   - '-Dsonar.tests=src/test'
+   - '-Dsonar.test.inclusions=src/test/java/org/springframework/samples/petclinic'
+   - '-Dsonar.exclusions=src/main'
 
 
 - name: 'gcr.io/cloud-builders/docker'
