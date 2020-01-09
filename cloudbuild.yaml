@@ -33,8 +33,9 @@ steps:
     - '-Dsonar.projectKey=org.springframework.samples:spring-petclinic'
     - '-Dsonar.host.url=https://sonarcloud.io'
     - '-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34'
-    - '-Dsonar.sources=src'
-    - 'Dsonar.inclusions=src/test/java/**'
+    -  'Dsonar.tests=src'
+#    - '-Dsonar.sources=src'
+#    - 'Dsonar.inclusions=src/test/java/**'
 - name: 'gcr.io/cloud-builders/gke-deploy:stable'
   args:
   - run
