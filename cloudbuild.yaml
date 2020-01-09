@@ -9,13 +9,13 @@ steps:
   args: ["push", "gcr.io/$PROJECT_ID/petclinic:latest"]
 #- name: 'gcr.io/cloud-builders/mvn'
  # args: ["sonar:sonar", "-Dsonar.host.url=https://sonarcloud.io", "dir=.","-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34"]
-#- name: 'gcr.io/$PROJECT_ID/sonar-scanner:3.3.0.1492'
- # args:
- #   - '-Dsonar.host.url=https://sonarcloud.io'
-  #  - '-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34'
-   # - '-Dsonar.projectKey=org.springframework.samples:spring-petclinic'
-    #- '-Dsonar.organization=madhuhaasnannaka'
-    #- '-Dsonar.sources=.'
+- name: 'gcr.io/$PROJECT_ID/sonar-scanner:3.3.0.1492'
+  args:
+    - '-Dsonar.host.url=https://sonarcloud.io'
+    - '-Dsonar.login=8e82f9c5b979651cfc8274ef93f1d2adc1f47c34'
+    - '-Dsonar.projectKey=org.springframework.samples:spring-petclinic'
+    - '-Dsonar.organization=madhuhaasnannaka'
+    - '-Dsonar.sources=.'
 #- name: maven:3.6.0-jdk-8-slim
 #  entrypoint: mvn
 #  args: 
